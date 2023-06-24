@@ -30,8 +30,8 @@ jobs:
           npm install
           npm run build
 
-          aws s3 sync <YOUR_BUILD_DIRECTORY> s3://<YOUR_S3_BUCKET> --delete
+          aws s3 sync build s3://resume-static-site-22 --delete
 
       - name: Invalidate CloudFront cache
         run: |
-          aws cloudfront create-invalidation --distribution-id <YOUR_CLOUDFRONT_DISTRIBUTION_ID> --paths "/*"
+          aws cloudfront create-invalidation --distribution-id E1QNJV7PZXDTIH --paths "/*"
