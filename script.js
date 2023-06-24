@@ -1,4 +1,5 @@
 // Function to increment and display the visitor count
+//
 function incrementVisitorCount() {
     // Send an HTTP request to the server to increment the count
     fetch('/incrementCount')
