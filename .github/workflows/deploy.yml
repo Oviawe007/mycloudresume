@@ -1,37 +1,23 @@
-name: Deploy to S3 and CloudFront
+name: Upload Website
 
 on:
   push:
     branches:
-      - main
+    - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v1
 
-      - name: AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: us-east-1
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1
 
-      - name: Install AWS CLI
-        run: |
-          pip install awscli --upgrade --user
-
-      - name: Build and deploy
-        run: |
-          # Replace the commands with your build and deployment steps
-          npm install
-          npm run build
-
-          aws s3 sync build s3://resume-static-site-22 --delete
-
-      - name: Invalidate CloudFront cache
-        run: |
-          aws cloudfront create-invalidation --distribution-id E1QNJV7PZXDTIH --paths "/*"
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./public/ s3://BUCKET_NAME --delete
