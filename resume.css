@@ -7,13 +7,7 @@
 
   }
 
-  /* Additional styles for headings and links */
-  /* h1,
-  h2,
-  h3 {
-    color: #333;
-    font-family: Arial, sans-serif;
-  } */
+ 
 
   a {
     color: #cc1100;
@@ -41,6 +35,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-top: 3px solid #666;
     border-bottom: 3px solid #666;
+    border-radius: 5px;
   }
 
   #hd{
@@ -106,7 +101,7 @@
   }
 
   .second .talent {
-    /* background-color: #cc1100; */
+    
     display: flex;
     align-items: center;
     justify-content: space-around;
