@@ -4,6 +4,7 @@
 .yui-u .talent li {
     display: inline-block;
     margin-right: 10px;
+    list-style: square;
 
   }
 
@@ -112,7 +113,7 @@
   }
   .second .talent ul li{
     margin-bottom: 20px;
-    list-style: none;
+    list-style: square;
     font-size: small;
   }
   .head {
