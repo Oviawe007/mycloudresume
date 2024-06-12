@@ -77,7 +77,7 @@
 
   .yui-gf{
     margin-bottom: 2em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     border-bottom: 1px solid #ccc;
     display: flex;
     align-items: center;
@@ -89,6 +89,12 @@
   }
   .ls-1{
     font-size: small;
+  }
+
+  .ls-11{
+    font-size: small;
+    line-height: 20px;
+
   }
 
   .ls-1 h2{
